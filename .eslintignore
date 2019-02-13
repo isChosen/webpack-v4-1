@@ -1,0 +1,4 @@
+# Ignore all files ending with js in root directory
+# except src directory
+*.js
+!src/*

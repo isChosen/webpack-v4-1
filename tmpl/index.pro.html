@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" href="./dist/static/css/reset.css" />
+    <link rel="stylesheet" href="./dist/static/fonts/iconfont.css" />
+  </head>
+  <body>
+    <div id="root">首页加载中，请稍候...</div>
+
+    <!--[if lt IE 10]>
+      <script src="./dist/static/lib/es5-shim-min.js"></script>
+      <script src="./dist/static/lib/es5-sham-min.js"></script>
+    <![endif]-->
+    <script>
+      /**
+       * 检测浏览器环境是否需要 polyfill
+       * modern browser 不需要添加 polyfill.min.js 避免多余的代码
+       * 只能用 var, 因为 ie10- 不支持 const let
+       */
+      var modernBrowser = 'assign' in Object && 'Promise' in window;
+      if (!modernBrowser) {
+        var scriptEle = document.createElement('script');
+        scriptEle.async = false;
+        scriptEle.src = './dist/static/lib/polyfill.min.js';
+        document.head.appendChild(scriptEle);
+      }
+    </script>
+    <script type="text/javascript" src="./dist/dll/react.dll.js"></script>
+  </body>
+</html>

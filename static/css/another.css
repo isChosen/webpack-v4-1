@@ -1,0 +1,10 @@
+.cl:after, .clearfix:after {
+  content: ".";
+  height: 0;
+  clear: both;
+  display: block;
+  visibility: hidden;
+}
+.cl, .clearfix {
+  zoom: 1;
+}
