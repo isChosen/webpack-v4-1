@@ -2,19 +2,15 @@
  * @Author: lcs
  * @Date: 2019-02-13 10:49:47
  * @Last Modified by: lcs
- * @Last Modified time: 2019-02-13 16:49:47
- * @Description: Store => Reducer
+ * @Last Modified time: 2019-02-14 17:41:26
+ * @Description: Global Reducer: 组件中的 state 对象是在此创建的
  */
 
-const defaultState = {
-  hasBkColor: false
-};
+import { combineReducers } from 'redux-immutable';
+import homeReducer from '__ComponentsPath__/home/store/reducer';
 
-export default (state = defaultState, action) => {
-  if (action.type === 'Toggle_Home_Bk') {
-    const newState = JSON.parse(JSON.stringify(state));
-    newState.hasBkColor = !action.bool;
-    return newState;
-  }
-  return state;
-};
+const reducer = combineReducers({
+  home: homeReducer
+});
+
+export default reducer;

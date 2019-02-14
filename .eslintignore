@@ -2,3 +2,4 @@
 # except src directory
 *.js
 !src/*
+!src/**/*.js

@@ -2,7 +2,7 @@
  * @Author: lcs
  * @Date: 2019-01-31 15:11:29
  * @Last Modified by: lcs
- * @Last Modified time: 2019-02-13 16:53:38
+ * @Last Modified time: 2019-02-14 21:17:10
  * @Description: Product Page
  */
 
@@ -12,8 +12,8 @@ import { Spin, Icon } from 'antd';
 
 import productLess from './product.less';
 
-const ProductA = lazy(() => import(/* webpackChunkName: "chunk-producta" */ './ProductA'));
-const ProductB = lazy(() => import(/* webpackChunkName: "chunk-productb" */ './ProductB'));
+const ProductA = lazy(() => import(/* webpackChunkName: "chunk-producta" */ './producta/ProductA'));
+const ProductB = lazy(() => import(/* webpackChunkName: "chunk-productb" */ './productb/ProductB'));
 
 class Product extends Component {
   constructor(props) {

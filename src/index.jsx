@@ -2,22 +2,32 @@
  * @Author: lcs
  * @Date: 2019-01-31 15:11:44
  * @Last Modified by: lcs
- * @Last Modified time: 2019-02-13 16:53:24
+ * @Last Modified time: 2019-02-14 21:15:34
  * @Description: React Root
  */
 
 import React from 'react';
 import { render } from 'react-dom';
-import { HashRouter } from 'react-router-dom';
+import { Switch, Route, HashRouter } from 'react-router-dom';
+
 import { Provider } from 'react-redux';
-import App from './components/app/App';
-import store from './store';
+import store from '__StorePath__';
+import App from '__ComponentsPath__/app/App';
+import Login from '__ComponentsPath__/login/Login';
+
+const Basic = () => (
+  <Provider store={store}>
+    <Switch>
+      {/* 注意：此顺序不能调换 */}
+      <Route path="/login" exact component={props => <Login {...props} />} />
+      <Route path="/" component={props => <App {...props} />} />
+    </Switch>
+  </Provider>
+);
 
 render(
-  <Provider store={store}>
-    <HashRouter>
-      <App />
-    </HashRouter>
-  </Provider>,
+  <HashRouter>
+    <Basic />
+  </HashRouter>,
   document.getElementById('root')
 );

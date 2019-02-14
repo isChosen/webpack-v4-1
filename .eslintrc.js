@@ -2,7 +2,7 @@
  * @Author: lcs
  * @Date: 2019-01-31 11:01:01
  * @Last Modified by: lcs
- * @Last Modified time: 2019-02-13 16:55:11
+ * @Last Modified time: 2019-02-14 19:49:18
  * @Description: Eslint Configuration
  */
 
@@ -40,12 +40,19 @@ module.exports = {
     'import/no-unresolved': 'off', // 确保导入的模块可以解析为本地文件系统上的模块
     'class-methods-use-this': "off",
     'max-len': ["error", { "code": 150 }], // 每行代码多大长度
-    'object-curly-newline': [ // 对象字面量换行方式
+    'no-unused-expressions': ["error", { "allowShortCircuit": true }], // 不常用表达式：允许短路运算符
+    'no-param-reassign': 'off', // 对象属性允许改变（直译：允许参数再赋值）
+    'no-underscore-dangle': 'off', // 允许标识符带下划线
+    'import/prefer-default-export': 'off', // 允许某个文件只有单个 export 导出语句
+    'switch-colon-spacing': ["error", {"after": true, "before": false}], // switch 语句冒号前不带空格，其后带一个空格
+    'no-shadow': 'off', // 允许内部在定义与外部同名变量
+
+    'object-curly-newline': [ // 对象字面量 和 import 以及 export 语句的换行方式
       'error',
       {
-        ObjectPattern: { multiline: true },
-        ImportDeclaration: 'never',
-        ExportDeclaration: { multiline: true, minProperties: 2 }
+        ObjectPattern: { multiline: true, minProperties: 5 },
+        ImportDeclaration: { multiline: true, minProperties: 5 },
+        ExportDeclaration: { multiline: true, minProperties: 5 }
       }
     ],
     'react/jsx-wrap-multilines': [ // jsx 标签在几种情况下的换行方式
