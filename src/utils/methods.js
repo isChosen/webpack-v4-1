@@ -1,7 +1,7 @@
 /*
- * @Author: Detcx
+ * @Author: liangchaoshun
  * @Date: 2019-02-11 11:45:31
- * @Last Modified by: lcs
+ * @Last Modified by: liangchaoshun
  * @Last Modified time: 2019-02-14 13:28:37
  * @Description: Common Methods
  */

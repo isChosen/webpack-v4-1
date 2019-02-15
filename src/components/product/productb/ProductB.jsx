@@ -1,13 +1,13 @@
 /*
- * @Author: lcs
+ * @Author: liangchaoshun
  * @Date: 2019-01-31 15:10:02
- * @Last Modified by: lcs
- * @Last Modified time: 2019-02-13 18:04:06
+ * @Last Modified by: liangchaoshun
+ * @Last Modified time: 2019-02-15 16:22:48
  * @Description: ProductB Page
  */
 
 import React, { Component } from 'react';
-import { axios } from '__Utils__';
+import axios from '__Utils__/http';
 import pbLess from './productB.less';
 
 export default class ProductB extends Component {

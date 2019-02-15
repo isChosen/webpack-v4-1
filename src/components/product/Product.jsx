@@ -1,7 +1,7 @@
 /*
- * @Author: lcs
+ * @Author: liangchaoshun
  * @Date: 2019-01-31 15:11:29
- * @Last Modified by: lcs
+ * @Last Modified by: liangchaoshun
  * @Last Modified time: 2019-02-14 21:17:10
  * @Description: Product Page
  */

@@ -1,15 +1,14 @@
 /*
- * @Author: lcs
+ * @Author: liangchaoshun
  * @Date: 2019-01-31 15:11:44
- * @Last Modified by: lcs
- * @Last Modified time: 2019-02-14 21:15:34
+ * @Last Modified by: liangchaoshun
+ * @Last Modified time: 2019-02-15 09:19:01
  * @Description: React Root
  */
 
 import React from 'react';
 import { render } from 'react-dom';
 import { Switch, Route, HashRouter } from 'react-router-dom';
-
 import { Provider } from 'react-redux';
 import store from '__StorePath__';
 import App from '__ComponentsPath__/app/App';

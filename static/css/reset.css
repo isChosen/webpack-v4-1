@@ -1,7 +1,8 @@
 html, body {
   margin: 0;
-  padding: 5px;
-  background: hsl(0, 0%, 97%) !important;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -14,4 +15,10 @@ ul {
 }
 a {
   text-decoration: none;
+}
+
+#root{
+  width: 100%;
+  height: 100%;
+  position: relative;
 }

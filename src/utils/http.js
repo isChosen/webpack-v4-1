@@ -1,8 +1,8 @@
 /*
- * @Author: Detcx
+ * @Author: liangchaoshun
  * @Date: 2019-02-10 20:01:18
- * @Last Modified by: lcs
- * @Last Modified time: 2019-02-14 13:25:46
+ * @Last Modified by: liangchaoshun
+ * @Last Modified time: 2019-02-15 16:25:50
  * @Description: Axios Interceptor
  */
 
@@ -24,8 +24,8 @@ axios.interceptors.request.use(
           params = config.data;
         }
       }
-      params.curr || (params.curr = 1);
-      params.per_page || (params.per_page = 10);
+      params.pageIndex || (params.pageIndex = 1);
+      params.pageRows || (params.pageRows = 10);
       config.data = params;
     }
     return config;

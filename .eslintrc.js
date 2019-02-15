@@ -1,8 +1,8 @@
 /*
- * @Author: lcs
+ * @Author: liangchaoshun
  * @Date: 2019-01-31 11:01:01
- * @Last Modified by: lcs
- * @Last Modified time: 2019-02-14 19:49:18
+ * @Last Modified by: liangchaoshun
+ * @Last Modified time: 2019-02-15 11:27:10
  * @Description: Eslint Configuration
  */
 
@@ -26,8 +26,9 @@ module.exports = {
     // value 为 "off" 时，表示禁用
     'no-unused-vars': 'warn', // 变量：声明了但未使用
     'no-console': 'off', // 文中 console.log：可以有
+    "no-plusplus": 0,//禁止使用++，--
     indent: ['error', 2], // 缩进： 2 个空格
-    'linebreak-style': ['error', 'windows'], // 换行：CRLF
+    'linebreak-style': ['off', 'windows'], // 换行：CRLF
     quotes: ['error', 'single'], // 引号：单引号
     semi: ['error', 'always'], // 语句结束：分号
     'comma-dangle': ['error', 'never'], // 尾逗号：不需要
@@ -45,7 +46,8 @@ module.exports = {
     'no-underscore-dangle': 'off', // 允许标识符带下划线
     'import/prefer-default-export': 'off', // 允许某个文件只有单个 export 导出语句
     'switch-colon-spacing': ["error", {"after": true, "before": false}], // switch 语句冒号前不带空格，其后带一个空格
-    'no-shadow': 'off', // 允许内部在定义与外部同名变量
+    'no-shadow': 'off', // 允许内部再定义与外部同名变量
+    'react/no-unused-prop-types': 'warn', // react 属性定义了，但未使用
 
     'object-curly-newline': [ // 对象字面量 和 import 以及 export 语句的换行方式
       'error',

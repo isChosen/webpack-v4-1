@@ -1,8 +1,8 @@
 /*
- * @Author: lcs
+ * @Author: liangchaoshun
  * @Date: 2019-01-28 15:49:12
- * @Last Modified by: Detcx
- * @Last Modified time: 2019-02-11 15:21:46
+ * @Last Modified by: liangchaoshun
+ * @Last Modified time: 2019-02-15 11:05:51
  * @Description: 本地 mock data
  *   数据源： 需要要什么样的数据格式，请在当前目录下的 ./data 目录中新建 json 类型文件，示例如：example1.json
  *   接  口： 在此文件(mockConf.js) 新建 api 接口
@@ -43,6 +43,16 @@ const Mock = app => {
   // 与本地 node 服务是同一个 api，最终返回的是 mock 数据，验证了 devServer.before 相比于 proxy 优先级更高
   app.get('/api/getEnvirData', (req, res) => {
     res.json(mockEnvirData);
+  });
+
+  // 主页获取随机数
+  app.get('/mock/getRandom', (req, res) => {
+    const selectFrom = (lv, uv) => {
+      const choices = uv - lv + 1;
+      return Math.floor(Math.random() * choices + lv);
+    }
+    const number = selectFrom(2, 9);
+    res.json({ code: 2, data: number })
   });
 };
 
