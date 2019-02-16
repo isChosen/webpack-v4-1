@@ -2,13 +2,13 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-14 14:21:34
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-15 14:08:13
+ * @Last Modified time: 2019-02-16 18:12:03
  * @Description: App 顶层容器
  */
 
 import { Icon, Spin } from 'antd'; // TODO FIXME 为了首屏加载快速，App 组件中不能出现像 Icon 这样大的组件，自己写（后期优化）
 import React, { Fragment, lazy, Suspense } from 'react';
-import { Link, Switch, Route, Redirect } from 'react-router-dom';
+import { NavLink, Switch, Route, Redirect } from 'react-router-dom';
 import Header from '__PublicComponents__/header/Header';
 import appLess from './app.less';
 
@@ -23,13 +23,24 @@ const App = props => {
       <Header />
       <hr />
       <section className={appLess.section}>
-        <Link to="/">Home</Link>
+        <NavLink to="/home" activeClassName={appLess.navLinkActive} exact>Home</NavLink>
         <span> | </span>
-        <Link to="/product">Products</Link>
+        <NavLink to="/product" activeClassName={appLess.navLinkActive}>Products</NavLink>
         <span> | </span>
-        <Link to="/about">About</Link>
+        <NavLink
+          activeClassName={appLess.navLinkActive}
+          to={{
+            pathname: '/about',
+            hash: '#the-hash',
+            search: '?abc=asdf',
+            state: { stateParams: 'state value' },
+            query: { queryPrams: 'query value' }
+          }}
+        >
+        About
+        </NavLink>
         <span> | </span>
-        <Link to="/login">Login</Link>
+        <NavLink to="/login">Login</NavLink>
         <div
           style={{
             padding: '5px',

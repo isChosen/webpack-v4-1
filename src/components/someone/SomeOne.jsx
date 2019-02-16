@@ -2,14 +2,14 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-15 13:38:05
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-15 15:40:13
+ * @Last Modified time: 2019-02-16 15:35:45
  * @Description: Test for Communication Between Components
  */
 
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import * as ActionsCreators from './store/actionCreator';
+import * as actionsCreators from './store/actionCreator';
 import someoneLess from './someone.less';
 
 const SomeOne = props => {
@@ -48,10 +48,10 @@ const mapStateToProps = state => ({
 // 映射 methods 成 prop，所以 methods 能从这里获取 dispatch
 const mapDispathToProps = dispath => ({
   toggleSelfBk(bool) {
-    dispath(ActionsCreators.toggleSelfBk(bool));
+    dispath(actionsCreators.toggleSelfBk(bool));
   },
   toggleParentBk(bool) {
-    dispath(ActionsCreators.toggleParentBk(bool));
+    dispath(actionsCreators.toggleParentBk(bool));
   }
 });
 

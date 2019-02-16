@@ -2,12 +2,12 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-13 10:49:47
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-15 13:24:11
+ * @Last Modified time: 2019-02-16 15:42:20
  * @Description: Home Reducer
  */
 
 import { fromJS } from 'immutable';
-import * as ActionConstants from './actionTypes';
+import { TOGGLE_HOME_BK, RANDOM_FETCH_SUCCEEDED } from '__StorePath__/actionTypes';
 
 // initState 若没有声明默认值，则组件中需要设置 defaultProps
 const initState = fromJS({
@@ -18,13 +18,15 @@ const initState = fromJS({
 const reducer = (state = initState, action) => {
   const { type } = action;
   switch (type) {
-  case ActionConstants.TOGGLE_HOME_BK:
+  case TOGGLE_HOME_BK:
     return state.set('hasBkColor', !action.bool);
-  case ActionConstants.GET_RANDOM_NUMBER:
-    return state.set('randomNum', action.random);
+  case RANDOM_FETCH_SUCCEEDED: {
+    const { result: { data } } = action;
+    return state.set('randomNum', data.data);
+  }
   default:
     return state;
   }
 };
 
-export default reducer;
+export { reducer };

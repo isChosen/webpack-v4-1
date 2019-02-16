@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2018-11-01 12:16:57
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-14 13:37:54
+ * @Last Modified time: 2019-02-16 19:17:32
  * @Description: Webpack Configuration Development
  */
 
@@ -40,8 +40,9 @@ module.exports = merge.smart(base, {
     compress: true,
     progress: true,
     open: 'Chrome',
-    host: '0.0.0.0',
-    useLocalIp: true,
+    // host: '0.0.0.0',
+    host: 'localhost',
+    // useLocalIp: true,
     clientLogLevel: 'error',
     contentBase: __dirname,
     disableHostCheck: true,
@@ -52,7 +53,7 @@ module.exports = merge.smart(base, {
         pathRewrite: { '^/api': '' }
       },
       '/v1/web': {
-        target: 'https://200.200.200.80', // url 会自动补全：https://200.200.200.80/v1/web
+        target: 'https://200.200.200.50', // url 会自动补全：https://200.200.200.50/v1/web
         secure: false // inclusion https
       }
     },

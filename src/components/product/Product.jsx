@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-31 15:11:29
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-14 21:17:10
+ * @Last Modified time: 2019-02-16 14:24:00
  * @Description: Product Page
  */
 
@@ -31,7 +31,7 @@ class Product extends Component {
       console.log('count: ', count);
       this.setState({count: ++count})
     }, 2000) */
-    console.log('less: ', productLess);
+    // console.log('less: ', productLess);
   }
 
   render() {

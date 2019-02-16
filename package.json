@@ -23,6 +23,7 @@
     "plugins": [
       "@babel/plugin-syntax-dynamic-import",
       "@babel/plugin-proposal-async-generator-functions",
+      "@babel/plugin-transform-runtime",
       [
         "import",
         {
@@ -42,6 +43,7 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-async-generator-functions": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.4.6",
@@ -80,19 +82,21 @@
   },
   "dependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/runtime": "^7.3.1",
     "antd": "^3.13.0",
     "axios": "^0.18.0",
     "immutable": "^4.0.0-rc.12",
     "lodash": "^4.17.11",
     "prop-types": "^15.7.1",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
+    "qs": "^6.6.0",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
     "react-redux": "^6.0.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-immutable": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-saga": "^1.0.1"
   },
   "scripts": {
     "dll:dev": "webpack --progress --config webpack.config.dll.dev.js",

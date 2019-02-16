@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-31 15:03:13
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-15 14:50:13
+ * @Last Modified time: 2019-02-16 15:20:33
  * @Description: Home Page
  */
 
@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import cover from '__ImagesPath__/cover.jpg';
 import { methods } from '__Utils__';
-import * as ActionsCreators from './store/actionCreator';
+import * as ActionCreators from './store/actionCreator';
 import homeLess from './home.less';
 import SomeOne from '../someone/SomeOne';
 
@@ -23,7 +23,12 @@ class Home extends Component {
   }
 
   render() {
-    const { hasBkColor, toggleBkColor, getRandomNum, randomNum } = this.props;
+    const {
+      hasBkColor,
+      toggleBkColor,
+      getRandomNum,
+      randomNum
+    } = this.props;
     return (
       <div className={`${homeLess.homeCont} ${hasBkColor ? homeLess.hasBkColor : ''}`}>
         <h3><span className="iconfont" style={{ marginRight: 5 }}>&#xeb62;</span><span>Home</span></h3>
@@ -34,7 +39,7 @@ class Home extends Component {
         />
         <br /><br />
         <button type="button" onClick={toggleBkColor.bind(this, hasBkColor)}>Toggle background</button>
-        <br /><br />
+        <span> | </span>
         <button type="button" onClick={getRandomNum.bind(this)}>Get a random</button> <span>{randomNum}</span>
         <SomeOne />
       </div>
@@ -63,12 +68,12 @@ const mapStateToProps = state => ({
 });
 
 // 映射 methods 成 prop，所以 methods 能从这里获取 dispatch
-const mapDispathToProps = dispath => ({
+const mapDispathToProps = dispatch => ({
   toggleBkColor(bool) {
-    dispath(ActionsCreators.toggleBkColor(bool));
+    dispatch(ActionCreators.toggleBkColor(bool));
   },
   getRandomNum() {
-    dispath(ActionsCreators.getRandomNum());
+    dispatch(ActionCreators.getRandomNum());
   }
 });
 

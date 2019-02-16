@@ -2,21 +2,17 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-13 10:49:29
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-15 14:01:45
+ * @Last Modified time: 2019-02-16 15:02:23
  * @Description: Global Store
  */
 
-// TODO FIXME Production configuration
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
 import reducer from './reducer';
+import hotelSaga from './hotelSaga';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const enhancer = composeEnhancers(
-  applyMiddleware(thunk)
-);
-
-const store = createStore(reducer, enhancer);
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(reducer, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(hotelSaga);
 
 export default store;
