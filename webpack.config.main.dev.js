@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2018-11-01 12:16:57
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-16 19:17:32
+ * @Last Modified time: 2019-02-18 09:33:50
  * @Description: Webpack Configuration Development
  */
 
@@ -40,9 +40,8 @@ module.exports = merge.smart(base, {
     compress: true,
     progress: true,
     open: 'Chrome',
-    // host: '0.0.0.0',
-    host: 'localhost',
-    // useLocalIp: true,
+    host: '0.0.0.0',
+    useLocalIp: true,
     clientLogLevel: 'error',
     contentBase: __dirname,
     disableHostCheck: true,

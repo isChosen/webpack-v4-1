@@ -2,13 +2,13 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-10 20:01:18
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-16 19:13:18
+ * @Last Modified time: 2019-02-18 09:34:32
  * @Description: Axios Interceptor
  */
 
 import axios from 'axios';
 
-/* // axios.defaults.timeout = 5000;
+axios.defaults.timeout = 5000;
 
 // request interceptor
 axios.interceptors.request.use(
@@ -46,6 +46,6 @@ axios.interceptors.response.use(
     return response;
   },
   error => Promise.reject(error)
-); */
+);
 
 export default axios;

@@ -2,11 +2,10 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-14 14:21:34
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-16 18:12:03
+ * @Last Modified time: 2019-02-18 10:08:10
  * @Description: App 顶层容器
  */
 
-import { Icon, Spin } from 'antd'; // TODO FIXME 为了首屏加载快速，App 组件中不能出现像 Icon 这样大的组件，自己写（后期优化）
 import React, { Fragment, lazy, Suspense } from 'react';
 import { NavLink, Switch, Route, Redirect } from 'react-router-dom';
 import Header from '__PublicComponents__/header/Header';
@@ -34,7 +33,7 @@ const App = props => {
             hash: '#the-hash',
             search: '?abc=asdf',
             state: { stateParams: 'state value' },
-            query: { queryPrams: 'query value' }
+            query: { queryParams: 'query value' }
           }}
         >
         About

@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-31 15:10:02
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-15 16:22:48
+ * @Last Modified time: 2019-02-18 09:32:03
  * @Description: ProductB Page
  */
 
@@ -27,7 +27,8 @@ export default class ProductB extends Component {
       .catch(reason => {
         console.log('rank reason:', reason);
       }); */
-    axios.post('/mock/example2?abc=123', { name: 'Merry' })
+
+    axios.get('/mock/example2?abc=123', { params: { name: 'Merry' } })
       .then(result => {
         console.log('girls result: ', result);
       })

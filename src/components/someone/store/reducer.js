@@ -1,9 +1,9 @@
 /*
  * @Author: liangchaoshun
- * @Date: 2019-02-13 10:49:47
+ * @Date: 2019-02-14 15:06:59
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-16 15:42:55
- * @Description: Home Reducer
+ * @Last Modified time: 2019-02-18 11:02:57
+ * @Description: Someone Reducer
  */
 
 import { fromJS } from 'immutable';

@@ -1,5 +1,7 @@
-# Ignore all files ending with js in root directory
+# Ignore all files in node_modules directory
+# Ignore all files ending with js
 # except src directory
-*.js
+
+node_modules/*
+**/*.js
 !src/*
-!src/**/*.js

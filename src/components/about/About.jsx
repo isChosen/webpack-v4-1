@@ -2,15 +2,12 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-31 21:34:45
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-16 19:19:09
+ * @Last Modified time: 2019-02-18 10:17:44
  * @Description: About Page
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 import { Table, Icon } from 'antd';
-// import axios from '../../utils/http';
-import axios from 'axios';
-import qs from 'qs';
 
 const columns = [
   {
@@ -67,34 +64,35 @@ const data = [
   }
 ];
 
-class About extends Component {
-  componentDidMount() {
-    console.log('about props: ', this.props);
-    setTimeout(() => {
-      axios({
-        method: 'POST',
-        url: '/v1/web/sleepAccount/common/sleep/login4Hotel',
-        data: qs.stringify({
-          username: '18820993052',
-          password: 'VUsFjBeODaABgu37tXzPbw=='
-        }),
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-      }).then(result => {
-        console.log('login result: ', result);
-      }).catch(reason => {
-        console.log('login reason: ', reason);
-      });
-    }, 3000);
-  }
+const About = props => {
+  const {
+    // eslint-disable-next-line react/prop-types
+    location: {
+      hash,
+      pathname,
+      query: { queryParams },
+      search,
+      state: { stateParams }
+    }
+  } = props;
+  console.log('About props: ', props);
+  console.log('About hash: ', hash);
+  console.log('About pathname: ', pathname);
+  console.log('About queryParams: ', queryParams);
+  console.log('About search: ', search);
+  console.log('About stateParams: ', stateParams);
 
-  render() {
-    return (
-      <div>
-        <h3><span className="iconfont" style={{ marginRight: 5 }}>&#xeb65;</span><span>About</span></h3>
-        <Table columns={columns} dataSource={data} />
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <h3>
+        <span className="iconfont" style={{ marginRight: 5 }}>
+          &#xeb65;
+        </span>
+        <span>About</span>
+      </h3>
+      <Table columns={columns} dataSource={data} />
+    </div>
+  );
+};
 
 export default About;
