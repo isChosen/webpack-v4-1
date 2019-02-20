@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-31 21:34:45
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-18 10:17:44
+ * @Last Modified time: 2019-02-20 18:36:07
  * @Description: About Page
  */
 
@@ -64,35 +64,16 @@ const data = [
   }
 ];
 
-const About = props => {
-  const {
-    // eslint-disable-next-line react/prop-types
-    location: {
-      hash,
-      pathname,
-      query: { queryParams },
-      search,
-      state: { stateParams }
-    }
-  } = props;
-  console.log('About props: ', props);
-  console.log('About hash: ', hash);
-  console.log('About pathname: ', pathname);
-  console.log('About queryParams: ', queryParams);
-  console.log('About search: ', search);
-  console.log('About stateParams: ', stateParams);
-
-  return (
-    <div>
-      <h3>
-        <span className="iconfont" style={{ marginRight: 5 }}>
-          &#xeb65;
-        </span>
-        <span>About</span>
-      </h3>
-      <Table columns={columns} dataSource={data} />
-    </div>
-  );
-};
+const About = () => (
+  <div>
+    <h3>
+      <span className="iconfont" style={{ marginRight: 5 }}>
+        &#xeb65;
+      </span>
+      <span>About</span>
+    </h3>
+    <Table columns={columns} dataSource={data} />
+  </div>
+);
 
 export default About;

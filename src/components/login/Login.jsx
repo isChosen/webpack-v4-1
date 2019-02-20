@@ -1,31 +1,48 @@
+/* eslint-disable guard-for-in */
 /*
  * @Author: liangchaoshun
  * @Date: 2019-01-31 15:11:05
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-18 10:18:51
+ * @Last Modified time: 2019-02-20 18:26:05
  * @Description: Login Page
  */
 import React, { Component } from 'react';
 import {
   Form, Icon, Input, Button, Checkbox
 } from 'antd';
+import axios from 'axios'; // '__Utils__/http';
 import login from './login.less';
 import compileCode from './compileCode';
 
 class Login extends Component {
+  constructor() {
+    super();
+    this.state = {
+      checked: false
+    };
+  }
+
   componentDidMount() {
+    console.log('login props: ', this.props);
     this.initForm();
   }
 
   // 初始化表单账号密码
   initForm() {
     let loginForm = window.localStorage.getItem('login_form');
-    loginForm = loginForm ? JSON.parse(loginForm) : {};
+    loginForm = loginForm ? JSON.parse(loginForm) : '';
     const obj = this.props;
-    obj.form.setFieldsValue({
-      username: compileCode.uncompile(loginForm.username),
-      password: compileCode.uncompile(loginForm.password)
-    });
+
+    if (loginForm) {
+      obj.form.setFieldsValue({
+        username: compileCode.uncompile(loginForm.username),
+        password: compileCode.uncompile(loginForm.password)
+      });
+    }
+
+    if (obj.form.getFieldValue('password')) {
+      this.setState({ checked: true });
+    }
   }
 
   handleSubmit(e) {
@@ -33,9 +50,29 @@ class Login extends Component {
     const obj = this.props;
     obj.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        // console.log('Received values of form: ', values);
+        // this.submitLogin(values);
+
+        const { username, password } = values;
+        // eslint-disable-next-line react/prop-types
+        const { history } = this.props;
+        if (username === 'het' && password === '123') history.replace('/dashboard');
       }
     });
+  }
+
+  // 提交用户密码
+  submitLogin(form) {
+    axios.post(
+      '/v1/web/sleepAccount/common/sleep/login4Hotel',
+      form
+    )
+      .then(result => {
+        console.log('girls result: ', result);
+      })
+      .catch(reason => {
+        console.log('girls reason:', reason);
+      });
   }
 
   // 记住密码
@@ -44,6 +81,7 @@ class Login extends Component {
     const obj = this.props;
     const username = obj.form.getFieldValue('username');
     const password = obj.form.getFieldValue('password');
+    console.log(checked);
     if (checked) {
       const loginForm = {
         username: compileCode.compile(username),
@@ -53,12 +91,13 @@ class Login extends Component {
     } else {
       window.localStorage.removeItem('login_form');
     }
+    this.setState({ checked });
   }
 
   render() {
     const thisProps = this.props;
     const { getFieldDecorator } = thisProps.form;
-    const checked = window.localStorage.getItem('login_form') !== undefined;
+    const { checked } = this.state;
     return (
       <div className={login.bg}>
         <div className={login.container}>

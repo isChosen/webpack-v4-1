@@ -8,10 +8,10 @@
 
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const Mock = require('./mocks/mockConf');
-const base = require('./webpack.config.main.base');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const base = require('./webpack.config.main.base');
+const Mock = require('./mocks/mockConf');
 
 module.exports = merge.smart(base, {
   mode: 'development',
@@ -69,11 +69,11 @@ module.exports = merge.smart(base, {
       inject: 'body',
       filename: 'index.html',
       title: '__Summer_dev_',
-      favicon: __dirname + '/favicon.ico',
-      template: __dirname + '/tmpl/index.dev.html'
-    }),
+      favicon: `${__dirname}/favicon.ico`,
+      template: `${__dirname}/tmpl/index.dev.html`
+    })
 
-    /*   
+    /*
     // 输出分析
     new BundleAnalyzerPlugin({
       analyzerPort: 2019,

@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-31 11:01:01
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-15 11:27:10
+ * @Last Modified time: 2019-02-18 19:00:26
  * @Description: Eslint Configuration
  */
 
@@ -25,14 +25,14 @@ module.exports = {
   rules: {
     // value 为 "off" 时，表示禁用
     'no-unused-vars': 'warn', // 变量：声明了但未使用
-    'no-console': 'off', // 文中 console.log：可以有
-    "no-plusplus": 0,//禁止使用++，--
+    'no-console': 'warn', // 文中 console.log：可以有
+    "no-plusplus": 'off',//允许使用++，--
     indent: ['error', 2], // 缩进： 2 个空格
     'linebreak-style': ['off', 'windows'], // 换行：CRLF
     quotes: ['error', 'single'], // 引号：单引号
     semi: ['error', 'always'], // 语句结束：分号
     'comma-dangle': ['error', 'never'], // 尾逗号：不需要
-    'arrow-parens': ['warn', 'as-needed'], // 箭头函数：一个参数时不需要括号
+    'arrow-parens': ['error', 'as-needed'], // 箭头函数：一个参数时不需要括号
     'jsx-a11y/anchor-is-valid': 'off', // href：必须为为有效值
     'jsx-quotes': ['error', 'prefer-double'], // jsx 标签属性引号：双引号
     'react/jsx-one-expression-per-line': 'off', // jsx 表达式：每行只能一条表达式

@@ -5,15 +5,20 @@
  * @Last Modified time: 2019-02-16 14:52:38
  * @Description: Request Path
  */
-const domain = '/asdf';
+const csleep = '/v1/web/csleep';
+const sleepAccount = '/v1/web/sleepAccount';
 
 export default {
+  login4Hotel: {
+    url: `${sleepAccount}/common/sleep/login4Hotel`,
+    method: 'post'
+  },
   users: {
-    url: `${domain}/userList`,
+    url: `${csleep}/userList`,
     method: 'get'
   },
   updateUser: {
-    url: `${domain}/updateUser`,
+    url: `${csleep}/updateUser`,
     method: 'post'
   },
   fetchGithubUser: {

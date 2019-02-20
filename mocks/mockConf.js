@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-28 15:49:12
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-18 09:27:43
+ * @Last Modified time: 2019-02-18 18:01:51
  * @Description: 本地 mock data
  *   数据源： 需要要什么样的数据格式，请在当前目录下的 ./data 目录中新建 json 类型文件，示例如：example1.json
  *   接  口： 在此文件(mockConf.js) 新建 api 接口
@@ -16,7 +16,6 @@ const girls = require('./data/example2.json');
 const mockEnvirData = require('./data/mockEnvirData.json');
 
 const Mock = app => {
-
   // ---------------  请不要删除示例，自定义接口请写在示例后面  ----------------
 
   // 示例-1
@@ -29,7 +28,7 @@ const Mock = app => {
   app.get('/mock/example2', (req, res) => {
     const { query: { name } } = req;
     // console.log('mock name: ', name);
-    let result = girls.data.find(el => el.name === name) || null;
+    const result = girls.data.find(el => el.name === name) || null;
     res.json(result);
   });
 
@@ -45,11 +44,11 @@ const Mock = app => {
     const selectFrom = (lv, uv) => {
       const choices = uv - lv + 1;
       return Math.floor(Math.random() * choices + lv);
-    }
-    const number = selectFrom(2, 9);
-    res.json({ code: 2, data: number })
+    };
+    const statusCode = selectFrom(1, 3);
+    const randomNumber = selectFrom(2, 9);
+    res.json({ code: statusCode, data: randomNumber });
   });
-
 };
 
 module.exports = Mock;

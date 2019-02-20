@@ -1,48 +1,32 @@
+/* eslint-disable default-case */
 /*
  * @Author: liangchaoshun
  * @Date: 2019-02-10 20:01:18
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-18 09:34:32
+ * @Last Modified time: 2019-02-20 10:07:37
  * @Description: Axios Interceptor
  */
 
 import axios from 'axios';
+import { NETWORK_ANOMALY, PARAMETER_ERROR, NEED_TO_LOGININ } from './constants';
+import { requestException, needToReLogin } from './methods';
 
 axios.defaults.timeout = 5000;
 
-// request interceptor
-axios.interceptors.request.use(
-  config => {
-    console.log('axios config: ', config);
-
-    if (config.method.toLowerCase() === 'post') {
-      let params = {};
-      const { headers: { 'Content-Type': ct } } = config;
-      if (config.data) {
-        if (typeof config.data === 'string') {
-          params = JSON.parse(config.data);
-        } else {
-          params = config.data;
-        }
-      }
-      params.pageIndex || (params.pageIndex = 1);
-      params.pageRows || (params.pageRows = 10);
-      if (ct === 'application/x-www-form-urlencoded') {
-        config.data = JSON.stringify(params);
-      } else {
-        config.data = params;
-      }
-    }
-    return config;
-  },
-  error => Promise.reject(error)
-);
-
-// TODO response interceptor
 axios.interceptors.response.use(
-  // eslint-disable-next-line arrow-body-style
   response => {
-    // console.log('axios response: ', response);
+    console.log('axios response: ', response);
+
+    // exceptions handle
+    const { data: { code: statusCode } } = response;
+    console.log('statusCode - NEED_TO_LOGININ: ', `${statusCode} - ${NEED_TO_LOGININ}`);
+    switch (statusCode) {
+    case PARAMETER_ERROR:
+    case NETWORK_ANOMALY: requestException('网络异常，请检查网络或尝试刷新页面'); break;
+    // case PARAMETER_ERROR: requestException('参数错误'); break;
+    case NEED_TO_LOGININ: needToReLogin(); break;
+    }
+
     return response;
   },
   error => Promise.reject(error)
