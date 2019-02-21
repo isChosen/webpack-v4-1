@@ -2,11 +2,11 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-11 11:45:31
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-20 13:31:55
+ * @Last Modified time: 2019-02-21 18:34:50
  * @Description: Project Common Methods
  */
 
-import { Modal, notification } from 'antd';
+import { Modal } from 'antd';
 
 export const afn = (arg1, arg2) => {
   console.log('utils addition: ', arg1 + arg2);
@@ -24,22 +24,6 @@ export const dfn = (arg1, arg2) => {
   console.log('utils division: ', arg1 / arg2);
 };
 
-// 请求异常处理
-export const requestException = exceptionDesc => {
-  notification.config({
-    bottom: 0,
-    duration: 3, // s
-    placement: 'bottomRight'
-  });
-  notification.open({
-    message: '网络错误',
-    description: exceptionDesc,
-    style: {
-      padding: 10
-    }
-  });
-};
-
 // 登录失效，需重新登录
 export const needToReLogin = () => {
   Modal.error({
@@ -52,7 +36,7 @@ export const needToReLogin = () => {
       console.log('reLoginConfirm called');
       const { location: { origin, pathname } } = window;
       const loginUrl = `${origin}${pathname}#/login`;
-      window.location.href = loginUrl;
+      window.location.replace(loginUrl);
     }
   });
 };

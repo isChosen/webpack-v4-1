@@ -3,7 +3,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-31 15:11:05
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-20 18:26:05
+ * @Last Modified time: 2019-02-21 14:47:37
  * @Description: Login Page
  */
 import React, { Component } from 'react';
@@ -23,7 +23,7 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    console.log('login props: ', this.props);
+    // console.log('login props: ', this.props);
     this.initForm();
   }
 
@@ -56,7 +56,7 @@ class Login extends Component {
         const { username, password } = values;
         // eslint-disable-next-line react/prop-types
         const { history } = this.props;
-        if (username === 'het' && password === '123') history.replace('/dashboard');
+        if (username === 'het' && password === '123') history.replace('/app');
       }
     });
   }

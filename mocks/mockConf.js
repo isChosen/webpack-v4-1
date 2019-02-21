@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-28 15:49:12
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-18 18:01:51
+ * @Last Modified time: 2019-02-21 16:49:31
  * @Description: 本地 mock data
  *   数据源： 需要要什么样的数据格式，请在当前目录下的 ./data 目录中新建 json 类型文件，示例如：example1.json
  *   接  口： 在此文件(mockConf.js) 新建 api 接口
@@ -33,6 +33,20 @@ const Mock = app => {
   });
 
   // ----------------  自定义 mock 接口，请在下方继续添加 ----------------
+
+  // 检测本地登录状态是否有效
+  app.get('/mock/checkLoggedStatus', (req, res) => {
+    const selectFrom = (lv, uv) => {
+      const choices = uv - lv + 1;
+      return Math.floor(Math.random() * choices + lv);
+    };
+    const random = selectFrom(1, 10);
+    let bool = false;
+    if (random % 2 === 0) bool = true;
+    setTimeout(() => {
+      res.json({ code: 0, data: bool });
+    }, 1000);
+  });
 
   // 与本地 node 服务是同一个 api，最终返回的是 mock 数据，验证了 devServer.before 相比于 proxy 优先级更高
   app.get('/api/getEnvirData', (req, res) => {

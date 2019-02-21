@@ -63,7 +63,7 @@ Warning: Failed prop type: Invalid prop `component` of type `object` supplied to
   * 解决办法参见 github issue：https://github.com/ReactTraining/react-router/issues/6420
   * <code>component</code> 可以换成 <code>render</code> 两者的区别：
     * <code>component</code> 会强制刷新其下的子组件，不管子组件的 <code>shouldComponentUpdate</code> 是否 <code>return false</code>；
-    * <code>render</code> 表现正常，刷不刷新子子组件由 <code>shouldComponentUpdate</code> 返回结果决定，建议使用 <code>render</code>。
+    * <code>render</code> 表现正常，刷不刷新子组件由 <code>shouldComponentUpdate</code> 返回结果决定，建议使用 <code>render</code>。
   * 将其写成如下格式，即可 fix warning，如下：
 ````html
 <Route path="/" exact component={props => <Home {...props} />} />

@@ -2,9 +2,14 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-13 16:49:54
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-16 15:44:10
+ * @Last Modified time: 2019-02-21 15:56:09
  * @Description: Global ActionTypes
  */
+
+export const SET_LOGINED_PENDING = 'SET_LOGINED_PENDING';
+export const CHECK_LOGINED_STATUS = 'CHECK_LOGINED_STATUS';
+export const LOGGED_STATUS_SUCCEEDED = 'LOGGED_STATUS_SUCCEEDED';
+export const LOGGED_STATUS_FAILED = 'LOGGED_STATUS_FAILED';
 
 export const USER_FETCH_REQUEST = 'USER_FETCH_REQUESTED';
 export const USER_FETCH_SUCCEEDED = 'USER_FETCH_SUCCEEDED';

@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-31 15:11:29
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-20 18:32:35
+ * @Last Modified time: 2019-02-21 16:46:10
  * @Description: Product Page
  */
 
@@ -46,9 +46,7 @@ class Product extends Component {
             <Switch>
               <Route path={`${path}/proda`} render={props => <ProductA {...props} />} />
               <Route path={`${path}/prodb`} render={props => <ProductB {...props} />} />
-              {/* <Route path='/product/proda' component={ProductA} />
-              <Route path='/product/prodb' component={ProductB} /> */}
-              <Route component={DefaultView} />
+              <Route render={DefaultView} />
             </Switch>
           </div>
         </Suspense>
