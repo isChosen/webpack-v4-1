@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-31 15:04:24
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-13 17:01:15
+ * @Last Modified time: 2019-02-22 15:00:50
  * @Description: ErrorBoundary
  */
 
@@ -15,6 +15,7 @@ class ErrorBoundary extends Component {
   }
 
   static getDerivedStateFromError(error) {
+    console.log('getDerivedStateFromError: ', error);
     // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }
@@ -26,6 +27,7 @@ class ErrorBoundary extends Component {
 
   render() {
     const { hasError } = this.state;
+    // eslint-disable-next-line react/prop-types
     const { children } = this.props;
     if (hasError) {
       // You can render any custom fallback UI

@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-28 15:49:12
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-21 16:49:31
+ * @Last Modified time: 2019-02-22 14:49:33
  * @Description: 本地 mock data
  *   数据源： 需要要什么样的数据格式，请在当前目录下的 ./data 目录中新建 json 类型文件，示例如：example1.json
  *   接  口： 在此文件(mockConf.js) 新建 api 接口
@@ -36,12 +36,12 @@ const Mock = app => {
 
   // 检测本地登录状态是否有效
   app.get('/mock/checkLoggedStatus', (req, res) => {
-    const selectFrom = (lv, uv) => {
-      const choices = uv - lv + 1;
-      return Math.floor(Math.random() * choices + lv);
-    };
-    const random = selectFrom(1, 10);
-    let bool = false;
+    const numArr = [1, 2, 4, 6, 8, 9, 10];
+    const len = numArr.length;
+    const sub = Math.floor(Math.random() * len);
+    const random = numArr[sub];
+    console.log('random: ', random);
+    let bool = true;
     if (random % 2 === 0) bool = true;
     setTimeout(() => {
       res.json({ code: 0, data: bool });

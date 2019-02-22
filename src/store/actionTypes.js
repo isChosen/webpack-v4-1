@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-13 16:49:54
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-21 15:56:09
+ * @Last Modified time: 2019-02-22 10:57:25
  * @Description: Global ActionTypes
  */
 
@@ -22,3 +22,7 @@ export const RANDOM_FETCH_FAILED = 'RANDOM_FETCH_FAILED';
 export const TOGGLE_HOME_BK = 'TOGGLE_HOME_BK';
 
 export const TOGGLE_SOMEONE_BK = 'TOGGLE_SOMEONE_BK';
+
+export const USERLIST_FETCH_REQUEST = 'USERLIST_FETCH_REQUEST';
+export const USERLIST_FETCH_SUCCEEDED = 'USERLIST_FETCH_SUCCEEDED';
+export const USERLIST_FETCH_FAILED = 'USERLIST_FETCH_FAILED';

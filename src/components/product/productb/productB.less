@@ -2,10 +2,32 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-13 16:59:58
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-13 17:00:31
+ * @Last Modified time: 2019-02-22 20:12:21
  * @Description: ProductB Less
  */
 
 .container {
-  color: rgb(27, 99, 12);
+  color: #333;
+}
+.usercont {
+  min-height: 100px;
+  :global(.ant-empty) {
+    color: rgba(0, 0, 0, 0.45);
+    :global(.ant-empty-image) {
+      height: 64px;
+    }
+  }
+}
+.ative {
+  color: #333;
+}
+.navs {
+  .active {
+    color: black;
+  }
+}
+.lis {
+  .active {
+    color: red;
+  }
 }

@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-16 09:24:12
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-21 13:53:15
+ * @Last Modified time: 2019-02-22 12:23:05
  * @Description: Global Saga: 在此文件内处理业务逻辑和数据格式
  */
 
@@ -43,6 +43,18 @@ function* fetchRandom(action) {
   }
 }
 
+// 获取用户列表
+function* fetchUserList(action) {
+  console.log('fetchUserList action: ', action);
+  const { page, rows } = action;
+  try {
+    const result = yield call(request.fetchUserList, page, rows);
+    yield put({ type: actionTypes.USERLIST_FETCH_SUCCEEDED, result });
+  } catch (e) {
+    yield put({ type: actionTypes.USERLIST_FETCH_FAILED, message: e.message });
+  }
+}
+
 /**
  * @Description: 分配任务 Generator
  */
@@ -50,6 +62,7 @@ function* hotelSaga() {
   yield takeLatest(actionTypes.CHECK_LOGINED_STATUS, checkLogged);
   yield takeLatest(actionTypes.RANDOM_FETCH_REQUEST, fetchRandom);
   yield takeLatest(actionTypes.USER_FETCH_REQUEST, fetchUser);
+  yield takeLatest(actionTypes.USERLIST_FETCH_REQUEST, fetchUserList);
 }
 
 export default hotelSaga;

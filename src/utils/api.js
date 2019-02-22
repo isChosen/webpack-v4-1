@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-10 20:01:38
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-21 13:56:15
+ * @Last Modified time: 2019-02-22 10:53:31
  * @Description: Request Path
  */
 const csleep = '/v1/web/csleep';
@@ -43,5 +43,11 @@ export default {
   fetchRandom: {
     url: '/mock/getRandom',
     method: 'get'
+  },
+
+  // 获取用户列表
+  fetchUserList: {
+    url: '/api/getUsers',
+    method: 'post'
   }
 };
