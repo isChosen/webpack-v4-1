@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2018-11-01 12:16:57
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-18 09:33:50
+ * @Last Modified time: 2019-02-23 15:05:52
  * @Description: Webpack Configuration Development
  */
 
@@ -69,8 +69,8 @@ module.exports = merge.smart(base, {
       inject: 'body',
       filename: 'index.html',
       title: '__Summer_dev_',
-      favicon: `${__dirname}/favicon.ico`,
-      template: `${__dirname}/tmpl/index.dev.html`
+      favicon: __dirname + '/favicon.ico',
+      template: __dirname + '/tmpl/index.dev.html'
     })
 
     /*

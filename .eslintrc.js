@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-31 11:01:01
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-22 15:39:52
+ * @Last Modified time: 2019-02-23 10:14:36
  * @Description: Eslint Configuration
  */
 
@@ -40,7 +40,12 @@ module.exports = {
     'react/prop-types': 'warn', // react props 检测
     'import/no-unresolved': 'off', // 确保导入的模块可以解析为本地文件系统上的模块
     'class-methods-use-this': "off",
-    'max-len': ["warn", { "code": 150 }], // 每行代码多大长度
+    'max-len': ["error", { // 每行代码多大长度
+      "code": 150,
+      "ignoreComments": true,
+      "ignoreTrailingComments": true,
+      "ignorePattern": "^.*(src|image)=.+$" // base64 图片
+    }],
     'no-unused-expressions': ["error", { "allowShortCircuit": true }], // 不常用表达式：允许短路运算符
     'no-param-reassign': 'off', // 对象属性允许改变（直译：允许参数再赋值）
     'no-underscore-dangle': 'off', // 允许标识符带下划线

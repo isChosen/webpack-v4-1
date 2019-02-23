@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-31 15:10:02
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-22 18:10:18
+ * @Last Modified time: 2019-02-23 10:16:44
  * @Description: ProductB Page
  */
 
@@ -99,24 +99,26 @@ class ProductB extends Component {
       <div className={pbLess.container}>
         <h4>Product B</h4>
         <div className={pbLess.usercont}>
-          {!Array.isArray(userList) ? (
-            <Empty
-              description="暂无数据"
-              image={noDataImg}
-            />
-          ) : (
-            userList.map(item => (
-              <div key={item.id}>
-                <span>id: {item.id}</span>
-                <span> - </span>
-                <span>{item.name}</span>
-                <span> - </span>
-                <span>{item.gender}</span>
-                <span> - </span>
-                <span>{item.age}</span>
-              </div>
-            ))
-          )}
+          {
+            !Array.isArray(userList) ? (
+              <Empty
+                description="暂无数据"
+                image={noDataImg}
+              />
+            ) : (
+              userList.map(item => (
+                <div key={item.id}>
+                  <span>id: {item.id}</span>
+                  <span> - </span>
+                  <span>{item.name}</span>
+                  <span> - </span>
+                  <span>{item.gender}</span>
+                  <span> - </span>
+                  <span>{item.age}</span>
+                </div>
+              ))
+            )
+          }
         </div>
       </div>
     );

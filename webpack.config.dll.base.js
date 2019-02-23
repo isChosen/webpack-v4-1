@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-1-25 11:34:34
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-13 16:57:21
+ * @Last Modified time: 2019-02-23 18:27:43
  * @Description: Dll Base
  */
 
@@ -12,7 +12,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    react: ['react', 'react-dom'] // 将 React 相关的模块放到一个单独的动态链表库中
+    react: ['react', 'react-dom'], // 将 React 相关的模块放到一个单独的动态链表库中
+    react_router: ['react-router', 'react-router-dom'] // 将 React 相关的模块放到一个单独的动态链表库中
   },
   output: {
     // 输出动态链接库的文件名称, [name] 代表当前动态链接库的名称

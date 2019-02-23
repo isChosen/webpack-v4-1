@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-1-25 11:38:25
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-22 18:51:53
+ * @Last Modified time: 2019-02-23 18:40:48
  * @Description: Webpack Configuration Base
  */
 
@@ -128,7 +128,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.es6'],
     mainFields: ['browser', 'main'],
-    // mainFields: ["jsnext:main", "browser", "main"], // 配合 scope hoisting
     modules: [path.resolve(__dirname, 'node_modules')],
     alias: {
       __Utils__: path.resolve(__dirname, 'src/utils'),
@@ -151,6 +150,9 @@ module.exports = {
     // 动态链接库
     new webpack.DllReferencePlugin({
       manifest: require('./dll/react.manifest.json')
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: require('./dll/react_router.manifest.json')
     }),
 
     // 多进程
