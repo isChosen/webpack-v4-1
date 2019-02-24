@@ -1,8 +1,8 @@
 /*
  * @Author: liangchaoshun
  * @Date: 2019-02-14 14:21:34
- * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-22 17:42:32
+ * @Last Modified by: Detcx
+ * @Last Modified time: 2019-02-24 12:56:00
  * @Description: App 顶层容器
  */
 
@@ -12,6 +12,7 @@ import appLess from './app.less';
 
 const Home = lazy(() => import(/* webpackChunkName: "chunk-home" */ '../home/Home'));
 const About = lazy(() => import(/* webpackChunkName: "chunk-about" */ '../about/About'));
+const AntdTest = lazy(() => import(/* webpackChunkName: "chunk-antdTest" */ '../forAntd/AntdTest'));
 const Product = lazy(() => import(/* webpackChunkName: "chunk-product" */ '../product/Product'));
 const Header = lazy(() => import(/* webpackChunkName: "chunk-header" */ '__PublicComponents__/header/Header'));
 
@@ -31,6 +32,8 @@ const App = props => {
           <span> | </span>
           <NavLink activeClassName={appLess.navLinkActive} to={`${url}/about`}>About</NavLink>
           <span> | </span>
+          <NavLink activeClassName={appLess.navLinkActive} to={`${url}/antdTest`}>AntdTest</NavLink>
+          <span> | </span>
           <NavLink to="/login">Login</NavLink>
           <div
             style={{
@@ -45,6 +48,7 @@ const App = props => {
               <Redirect exact from={`${path}`} to={`${path}/home`} />
               <Route path={`${path}/home`} render={props => <Home {...props} />} />
               <Route path={`${path}/about`} render={props => <About {...props} />} />
+              <Route path={`${path}/antdTest`} render={props => <AntdTest {...props} />} />
               <Route path={`${path}/product`} render={props => <Product {...props} />} />
             </Switch>
           </div>
