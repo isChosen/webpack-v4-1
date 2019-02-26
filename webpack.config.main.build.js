@@ -22,8 +22,8 @@ module.exports = merge.smart(base, {
   output: {
     publicPath: "./dist/",
     path: path.resolve(__dirname, "dist"), // 绝对路径
-    filename: 'bundle/[name].bundle.[hash:4].js',
-    chunkFilename: 'bundle/[name].[chunkhash:6].js'
+    filename: 'bundle/[id].bundle.[hash:4].js',
+    chunkFilename: 'bundle/[id].[chunkhash:6].js'
   },
   optimization: {
     minimizer: [
