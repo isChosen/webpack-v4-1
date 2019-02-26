@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-31 15:10:02
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-23 10:16:44
+ * @Last Modified time: 2019-02-25 13:40:01
  * @Description: ProductB Page
  */
 
@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Empty } from 'antd';
 import axios from '__Utils__/http';
-import ErrorBoundary from '__PublicComponents__/ErrorBoundary';
+import ErrorBoundary from '__PublicComponents__/errorBoundary/ErrorBoundary';
 import noDataImg from '__ImagesPath__/noData.png';
 import * as ActionCreators from './store/actionCreator';
 import pbLess from './productB.less';

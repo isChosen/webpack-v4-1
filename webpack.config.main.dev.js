@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2018-11-01 12:16:57
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-23 15:05:52
+ * @Last Modified time: 2019-02-26 20:41:10
  * @Description: Webpack Configuration Development
  */
 
@@ -52,7 +52,7 @@ module.exports = merge.smart(base, {
         pathRewrite: { '^/api': '' }
       },
       '/v1/web': {
-        target: 'https://200.200.200.50', // url 会自动补全：https://200.200.200.50/v1/web
+        target: 'https://100.100.100.10', // url 会自动补全：https://100.100.100.10/v1/web
         secure: false // inclusion https
       }
     },

@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-21 11:23:48
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-21 16:45:30
+ * @Last Modified time: 2019-02-26 20:39:37
  * @Description: Authorized Route
  */
 
@@ -42,7 +42,7 @@ class AuthorizedRoute extends Component {
 AuthorizedRoute.propTypes = {
   pending: PropTypes.bool,
   logged: PropTypes.bool,
-  component: PropTypes.func.isRequired,
+  component: PropTypes.PropTypes.func.isRequired,
   setPending: PropTypes.func.isRequired,
   ckeckLogined: PropTypes.func.isRequired
 };

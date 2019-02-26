@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-31 15:03:13
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-18 19:00:45
+ * @Last Modified time: 2019-02-26 19:41:50
  * @Description: Home Page
  */
 
@@ -32,7 +32,7 @@ const Home = props => {
       <br /><br />
       <button type="button" onClick={toggleBkColor.bind(this, hasBkColor)}>Toggle background</button>
       <span> | </span>
-      <button type="button" onClick={getRandomNum.bind(this)}>Get a random</button> <span>{randomNum}</span>
+      <button type="button" onClick={getRandomNum}>Get a random</button> <span>{randomNum}</span>
       <SomeOne />
     </div>
   );

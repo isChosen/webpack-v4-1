@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-16 09:24:12
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-22 12:23:05
+ * @Last Modified time: 2019-02-26 20:13:40
  * @Description: Global Saga: 在此文件内处理业务逻辑和数据格式
  */
 
@@ -45,7 +45,7 @@ function* fetchRandom(action) {
 
 // 获取用户列表
 function* fetchUserList(action) {
-  console.log('fetchUserList action: ', action);
+  // console.log('fetchUserList action: ', action);
   const { page, rows } = action;
   try {
     const result = yield call(request.fetchUserList, page, rows);

@@ -5,6 +5,7 @@
 /dll
 /cache
 /tmp
+/analysis
 /out-tsc
 
 # dependencies

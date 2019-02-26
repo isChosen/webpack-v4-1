@@ -2,8 +2,8 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-13 16:49:54
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-22 10:57:25
- * @Description: Global ActionTypes
+ * @Last Modified time: 2019-02-26 20:16:19
+ * @Description: Global ActionTypes Format："WORD_WORD_WORD"
  */
 
 export const SET_LOGINED_PENDING = 'SET_LOGINED_PENDING';
@@ -26,3 +26,6 @@ export const TOGGLE_SOMEONE_BK = 'TOGGLE_SOMEONE_BK';
 export const USERLIST_FETCH_REQUEST = 'USERLIST_FETCH_REQUEST';
 export const USERLIST_FETCH_SUCCEEDED = 'USERLIST_FETCH_SUCCEEDED';
 export const USERLIST_FETCH_FAILED = 'USERLIST_FETCH_FAILED';
+
+export const NEED_TO_RELOGIN = 'NEED_TO_RELOGIN';
+export const GOTO_LOGIN = 'GOTO_LOGIN';

@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-13 10:49:47
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-22 17:57:57
+ * @Last Modified time: 2019-02-26 20:10:39
  * @Description: Home Reducer
  */
 
@@ -24,8 +24,7 @@ const reducer = (state = initState, action) => {
     const { result: { data } } = action;
     return state.set('randomNum', data.data);
   }
-  default:
-    return state;
+  default: return state;
   }
 };
 

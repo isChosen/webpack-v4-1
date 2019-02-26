@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-02-21 14:09:48
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-21 18:19:28
+ * @Last Modified time: 2019-02-26 19:35:46
  * @Description: Authorized Route Reducer
  */
 
@@ -24,10 +24,10 @@ const reducer = (state = initState, action) => {
   case SET_LOGINED_PENDING:
     return state.set('pending', action.pending);
   case LOGGED_STATUS_SUCCEEDED: {
-    const { result: { data } } = action;
+    const { result: { data: { access } } } = action;
     return state.merge({
       pending: false,
-      logged: data.data
+      logged: access
     });
   }
   default: return state;

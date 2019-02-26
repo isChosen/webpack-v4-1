@@ -2,7 +2,7 @@
  * @Author: liangchaoshun
  * @Date: 2019-01-31 11:01:01
  * @Last Modified by: liangchaoshun
- * @Last Modified time: 2019-02-23 10:14:36
+ * @Last Modified time: 2019-02-26 16:55:53
  * @Description: Eslint Configuration
  */
 
@@ -54,6 +54,7 @@ module.exports = {
     'no-shadow': 'off', // 允许内部再定义与外部同名变量
     'react/no-unused-prop-types': 'warn', // react 属性定义了，但未使用
     'react/forbid-prop-types': 'off', // 允许使用 any array object 作为数据类型
+    'no-lone-blocks': 'off', // 允许单行花括号，react 常见
 
     'object-curly-newline': [ // 对象字面量 和 import 以及 export 语句的换行方式
       'error',
