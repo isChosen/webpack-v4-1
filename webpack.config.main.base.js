@@ -1,7 +1,7 @@
 /*
- * @Author: liangchaoshun
+ * @Author: Detcx
  * @Date: 2019-1-25 11:38:25
- * @Last Modified by: liangchaoshun
+ * @Last Modified by: Detcx
  * @Last Modified time: 2019-02-23 18:40:48
  * @Description: Webpack Configuration Base
  */

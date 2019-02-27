@@ -1,7 +1,7 @@
 /*
- * @Author: liangchaoshun
+ * @Author: Detcx
  * @Date: 2019-02-21 14:09:48
- * @Last Modified by: liangchaoshun
+ * @Last Modified by: Detcx
  * @Last Modified time: 2019-02-26 19:35:46
  * @Description: Authorized Route Reducer
  */

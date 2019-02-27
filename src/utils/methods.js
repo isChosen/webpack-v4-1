@@ -1,7 +1,7 @@
 /*
- * @Author: liangchaoshun
+ * @Author: Detcx
  * @Date: 2019-02-11 11:45:31
- * @Last Modified by: liangchaoshun
+ * @Last Modified by: Detcx
  * @Last Modified time: 2019-02-23 18:02:58
  * @Description: Project Common Methods
  */

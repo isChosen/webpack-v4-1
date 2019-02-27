@@ -1,7 +1,7 @@
 /*
- * @Author: liangchaoshun
+ * @Author: Detcx
  * @Date: 2019-01-28 15:49:12
- * @Last Modified by: liangchaoshun
+ * @Last Modified by: Detcx
  * @Last Modified time: 2019-02-26 19:30:59
  * @Description: 本地 mock data
  *   数据源： 需要要什么样的数据格式，请在当前目录下的 ./data 目录中新建 json 类型文件，示例如：example1.json

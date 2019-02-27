@@ -1,7 +1,7 @@
 /*
- * @Author: liangchaoshun
+ * @Author: Detcx
  * @Date: 2019-02-13 10:49:47
- * @Last Modified by: liangchaoshun
+ * @Last Modified by: Detcx
  * @Last Modified time: 2019-02-26 19:00:04
  * @Description: Global Reducer: 组件中的 state 对象是在此创建的
  */

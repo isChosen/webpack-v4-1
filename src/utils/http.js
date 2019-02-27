@@ -1,8 +1,8 @@
 /* eslint-disable default-case */
 /*
- * @Author: liangchaoshun
+ * @Author: Detcx
  * @Date: 2019-02-10 20:01:18
- * @Last Modified by: liangchaoshun
+ * @Last Modified by: Detcx
  * @Last Modified time: 2019-02-26 20:11:47
  * @Description: Axios Interceptor
  */

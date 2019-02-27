@@ -19,7 +19,7 @@
   * <span style="font-size: 16px; font-weight: 600; color: #f04134;">提交注意 提交注意 提交注意</span>
     - 普通 commit：不要提交你本地 <code style="color: #f04134;">dist</code> 目录下的文件；
     - 构建 commit：执行了 <code>npm run build</code> 命令后，要发布到内网的情况，就需要连同 <code style="color: #f04134;">dist</code> 下的所有文件一并提交。
-  * SVN 提交时，根目录下的 <span style="font-size: 16px; font-weight: 600; color: #f04134">.idea, analysis, cache, node_modules </span> 这些文件夹不需要提交。设置 <span style="color: #f04134">svn ignore</span> 方法：
+  * SVN 提交时，根目录下的 <span style="font-size: 16px; font-weight: 600; color: #f04134">.idea, .vscode, analysis, cache, node_modules </span> 这些文件夹不需要提交。设置 <span style="color: #f04134">svn ignore</span> 方法：
     * 右键选中需要忽略的文件/夹，TortoiseSVN > Add to ignore list > 递归或者不递归；
     * 查看 ignore list：项目根目录右击空白，TortoiseSVN > Properties，即可看到。
 - <span style="font-weight: 600; color: #49a9ee">技术框架</span>
@@ -80,7 +80,16 @@
     * <code>Eslint React Rules</code> 参见：https://github.com/yannickcr/eslint-plugin-react
     * <span style="color: #d24949">注意：遇到 <code>Eslint</code> 报错时，请到以上网站查找原因，如果需要修改规则，请先跟组内同事讨论决定。确定要改的话，在 <code>.eslintrc.js</code> 中修改，务必加上注释，注释格式参考已有注释</span>
   * 进入页面方式，必须登录后才能打开页面，否则重定向回登录页面。即使是粘贴输入 <code>URL</code> ，权限路由 <code>AuthorizedRoute</code> 会发送一个请求验证是否登录有效
-  * 输入 <code>URL</code> 打开页面，如果路径错误，则重定向到 <code>404</code> 页面
+  * 输入 <code>URL</code> 打开页面，路径中必须有 <code>app</code> 才允许进入页面，若路径中没有 <code>app</code> 则重定向到 <code>/login</code> 页面。如果路径中在 <code>app</code> 后面的路由路径有误，可自定义跳转页面，如：<code>404</code> ，本项目没指定
+  * 本项目中，<span style="color: #d24949">mock data</span> 只适合 <code>GET</code> 请求，因为 <code>POST</code> 被视为修改数据的请求类型，请在项目目录下的 <code>mocks/mockConf.js</code> 中配置，另参见配置中的注释说明。因 <span style="color: #d24949">mock</span> 的接口权重较高，遇同名接口时会覆盖其他接口请求，项目进展至联调阶段后请修正为真实接口
+- <span style="font-weight: 600; color: #d24949">测试功能点</span>
+  * <span style="color: #ce8512">登录页</span> | <span style="color: #ce8512">顶层容器 app</span> | <span style="color: #ce8512">拦截器</span> 为三大顶层组件
+  * 打开项目首先进入 <code>/login</code> 页面，登录后跳转 <code>/app</code> 将其重定向至 <code>/home</code>，每次进入（或刷新） <code>/app/\*\*/\*</code> 页面都会发送一个请求验证是否登录有效，若无效则重定向至 <code>/login</code>。进入了 <code>/app/\*\*/\*</code> 后切换路由达到页面变化，是不会发送请求验证登录是否有效的，登录名和密码： <code>abc 123</code>
+  * 主要在 <code>/home</code> 页面做测试，页面中的按钮 <span style="color: #ce8512">Toggle background</span> 、 <span style="color: #ce8512">Change self bk</span> 和 <span style="color: #ce8512">Change parent bk</span> 测试不使用 <code>redux-saga</code> 处理 <code>action</code> 的情况，改变 <code>/home</code> 及其子组件 <code>someone</code> 各自的背景颜色和测试子组件改变父组件的背景颜色（组件间相互通信）
+  * <code>/home</code> 页面的按钮 <span style="color: #ce8512">Get a random</span> 获取一个随机数
+    * 测试 <code>redux-saga</code> 处理 <code>Side Effects</code> 的 <code>action</code> 情况
+    * 测试根据返回结果中的状态码为 <span style="color: #0f0">3</span> 时，拦截器拦截每次请求的 <code>response</code> 会触发拦截器组件 <code>ResponseInterc</code> 以重定向至登录页<code>/login</code>
+  * <span style="color: #ce8512">样式模块化</span> 参见 <code>ProductB.jsx AntdTest.jsx</code> 组件及其关联的 <code>less</code> 样式文件
 ## <span style="font-weight: 600; color: #f04134">ISSUES</span>
 <span style="font-size: 16px; color: #d24949">1. react-router 4.x，正常写法时报 warnings，如下：</span>
 ```html
