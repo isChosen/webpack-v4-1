@@ -49,7 +49,7 @@
     - <span style="color: #42a8b5">按需引入的方式，打包构建时，没使用到代码的会被 <code>webpack</code> 自动 <code>treeshaking</code> 除掉</span>
   * 每个组件中建议只包含如下文件和目录：
     - \| - <code>componentName.jsx</code> ：视情况可拆分为 <span style="color: #ce8512">容器组件</span> 和 <span style="color: #ce8512">UI组件</span>，能用 <span style="color: #ce8512">纯函数</span> 就用纯函数
-    - \| - <code>componentName.less</code> ：组件的样式，如需修改第三方库的样式，添加 <code>:global</code> 书写格式如下：
+    - \| - <code>componentName.less</code> ：组件的样式，如需修改第三方库的样式，添加 <code>:global</code> 包裹三方样式，注意，其子元素内相同类名的三方样式也会被改写。记住一点：如果有多个相同类名，元素会继承最近父元素类名的样式 书写格式如下：
       ```less
       .usercont {
         min-height: 100px;
