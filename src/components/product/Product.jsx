@@ -1,8 +1,8 @@
 /*
  * @Author: Detcx
  * @Date: 2019-01-31 15:11:29
- * @Last Modified by: Detcx
- * @Last Modified time: 2019-02-21 16:46:10
+ * @Last Modified by: liangchaoshun
+ * @Last Modified time: 2019-02-27 18:26:56
  * @Description: Product Page
  */
 
@@ -38,10 +38,16 @@ class Product extends Component {
     const { match: { path, url } } = this.props;
     const DefaultView = () => <div>默认视图</div>;
     return (
-      <div>
+      <div className={productLess.container}>
         <h3><span className="iconfont" style={{ marginRight: 5 }}>&#xe6af;</span><span>Product</span></h3>
         <nav><Link to={`${url}/proda`}>product-a</Link> | <Link to={`${url}/prodb`}>product-b</Link></nav>
-        <Suspense fallback={<Spin indicator={<Icon type="loading" style={{ fontSize: 24 }} spin />} />}>
+        <Suspense
+          fallback={
+            <div className={productLess.spinCont}>
+              <Spin indicator={<Icon type="loading" style={{ fontSize: 24 }} spin />} />
+            </div>
+          }
+        >
           <div className={productLess.routerCont}>
             <Switch>
               <Route path={`${path}/proda`} render={props => <ProductA {...props} />} />
